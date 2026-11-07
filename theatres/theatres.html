@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineBook - Select Theatre</title>
+    <link rel="stylesheet" href="theatres.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="logo">🎬 CineBook</h1>
+
+      <div class="nav-right">
+        <span class="user">+91 <span id="userMobile"></span></span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="../movies/movies.html" class="back-link">← Back to Movies</a>
+
+      <!-- Movie details -->
+      <section class="movie-header">
+        <div class="mini-poster" id="miniPoster"></div>
+        <div>
+          <h2 id="movieTitle"></h2>
+          <p class="movie-meta" id="movieMeta"></p>
+        </div>
+      </section>
+
+      <!-- Date -->
+      <section class="date-box">
+        <span class="select-label">Date</span>
+        <div class="chips" id="dateChips"></div>
+      </section>
+
+      <h3 class="section-title">Choose theatre &amp; showtime</h3>
+
+      <div class="theatre-list" id="theatreList"></div>
+
+      <p class="no-shows" id="noShows">
+        No more shows available for this date. Please pick another date.
+      </p>
+    </main>
+
+    <script src="theatres.js"></script>
+  </body>
+</html>

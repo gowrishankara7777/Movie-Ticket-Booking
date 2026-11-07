@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineBook - Movies</title>
+    <link rel="stylesheet" href="movies.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="logo">🎬 CineBook</h1>
+
+      <div class="nav-right">
+        <span class="user">+91 <span id="userMobile"></span></span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2 class="page-title">Now Showing</h2>
+      <p class="page-subtitle">Pick a movie to book your tickets</p>
+
+      <div class="filter-row">
+        <span class="filter-label">Language</span>
+        <div class="filters" id="languageFilters"></div>
+      </div>
+
+      <div class="movie-grid" id="movieGrid"></div>
+
+      <p class="no-results" id="noResults">No movies found.</p>
+    </main>
+
+    <script src="movies.js"></script>
+  </body>
+</html>

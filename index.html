@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineBook - Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-left">
+        <h1>🎬 CineBook</h1>
+        <h2>Your movie night<br />starts here.</h2>
+        <p>Book your favourite movies, choose your seats and enjoy the show.</p>
+      </div>
+
+      <div class="login-right">
+        <h2>Welcome Back!</h2>
+        <p class="subtitle">Login using your mobile number</p>
+
+        <form id="loginForm">
+          <label>Mobile Number</label>
+
+          <div class="mobile-input">
+            <span>+91</span>
+            <input
+              type="tel"
+              id="mobile"
+              placeholder="Enter 10-digit mobile number"
+              maxlength="10"
+              pattern="[0-9]{10}"
+              inputmode="numeric"
+              required
+            />
+          </div>
+
+          <button type="submit">Login →</button>
+        </form>
+
+        <p class="register">
+          Don't have an account?
+          <a href="#" onclick="register(event)">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

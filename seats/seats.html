@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineBook - Select Seats</title>
+    <link rel="stylesheet" href="seats.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="logo">🎬 CineBook</h1>
+
+      <div class="nav-right">
+        <span class="user">+91 <span id="userMobile"></span></span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="../theatres/theatres.html" class="back-link"
+        >← Back to Theatres</a
+      >
+
+      <!-- Movie + show details -->
+      <section class="movie-header">
+        <div class="mini-poster" id="miniPoster"></div>
+        <div>
+          <h2 id="movieTitle"></h2>
+          <p class="movie-meta" id="movieMeta"></p>
+          <p
+            class="movie-meta"
+            id="showMeta"
+            style="margin-top: 6px; color: #ff4757"
+          ></p>
+        </div>
+      </section>
+
+      <!-- Seats -->
+      <section class="seat-section">
+        <div class="screen">SCREEN</div>
+
+        <div class="seat-map" id="seatMap"></div>
+
+        <div class="legend">
+          <span><i class="box available"></i> Available</span>
+          <span><i class="box selected"></i> Selected</span>
+          <span><i class="box booked"></i> Booked</span>
+        </div>
+
+        <div class="price-info">
+          <span>Silver ₹150 (A–C)</span>
+          <span>Gold ₹220 (D–F)</span>
+          <span>Premium ₹300 (G–H)</span>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="summary">
+        <div>
+          <p class="summary-label">Selected seats</p>
+          <p class="summary-seats" id="selectedSeats">None</p>
+        </div>
+        <div class="summary-right">
+          <p class="summary-label">Total</p>
+          <p class="summary-total" id="totalPrice">₹0</p>
+        </div>
+        <button id="proceedBtn" class="proceed-btn" disabled>
+          Proceed to Pay →
+        </button>
+      </section>
+    </main>
+
+    <script src="seats.js"></script>
+  </body>
+</html>

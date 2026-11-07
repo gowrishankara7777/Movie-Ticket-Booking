@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f0f16;
+  color: white;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #1b1b26;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.user {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.logout-btn {
+  padding: 8px 18px;
+  border: 1px solid #ff4757;
+  border-radius: 6px;
+  background: transparent;
+  color: #ff4757;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #ff4757;
+  color: white;
+}
+
+/* CONTENT */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #ff4757;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* MOVIE HEADER */
+
+.movie-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.mini-poster {
+  position: relative;
+  width: 70px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mini-poster img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-header h2 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.movie-meta {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* DATE */
+
+.date-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #1b1b26;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.select-label {
+  flex-shrink: 0;
+  color: #aaa;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border: 1px solid #393944;
+  border-radius: 8px;
+  background: #111118;
+  color: #ccc;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: #ff4757;
+}
+
+.chip.active {
+  background: #ff4757;
+  border-color: #ff4757;
+  color: white;
+}
+
+/* THEATRES */
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.theatre-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.theatre-card {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  background: #1b1b26;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.theatre-info {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.theatre-info h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.theatre-area {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.format-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: #2a2a38;
+  color: #ffc93c;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cancel-note {
+  margin-top: 10px;
+  color: #2ed573;
+  font-size: 12px;
+}
+
+.show-times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.show-btn {
+  padding: 10px 16px;
+  border: 1px solid #2ed573;
+  border-radius: 8px;
+  background: transparent;
+  color: #2ed573;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.show-btn:hover:not(:disabled) {
+  background: #2ed573;
+  color: #0f0f16;
+}
+
+.show-btn:disabled {
+  border-color: #393944;
+  color: #55555f;
+  cursor: not-allowed;
+}
+
+.no-shows {
+  display: none;
+  text-align: center;
+  color: #aaa;
+  margin-top: 30px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .user {
+    display: none;
+  }
+
+  .date-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .theatre-card {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .theatre-info {
+    width: 100%;
+  }
+}

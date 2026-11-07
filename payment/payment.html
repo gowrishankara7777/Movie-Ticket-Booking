@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineBook - Payment</title>
+    <link rel="stylesheet" href="payment.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="logo">🎬 CineBook</h1>
+
+      <div class="nav-right">
+        <span class="user">+91 <span id="userMobile"></span></span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="../seats/seats.html" class="back-link">← Back to Seats</a>
+      <h2 class="page-title">Payment</h2>
+
+      <div class="layout">
+        <!-- LEFT: payment options -->
+        <section class="pay-box">
+          <div class="methods" id="methods">
+            <button class="method active" data-method="upi">UPI</button>
+            <button class="method" data-method="card">Card</button>
+          </div>
+
+          <!-- UPI -->
+          <div class="panel active" id="panel-upi">
+            <label for="upiId">UPI ID</label>
+            <input
+              type="text"
+              id="upiId"
+              placeholder="yourname@upi"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- CARD -->
+          <div class="panel" id="panel-card">
+            <label for="cardNumber">Card Number</label>
+            <input
+              type="text"
+              id="cardNumber"
+              placeholder="1234 5678 9012 3456"
+              maxlength="19"
+              inputmode="numeric"
+              autocomplete="off"
+            />
+
+            <label for="cardName">Name on Card</label>
+            <input
+              type="text"
+              id="cardName"
+              placeholder="Full name"
+              autocomplete="off"
+            />
+
+            <div class="two-col">
+              <div>
+                <label for="cardExpiry">Expiry</label>
+                <input
+                  type="text"
+                  id="cardExpiry"
+                  placeholder="MM/YY"
+                  maxlength="5"
+                  inputmode="numeric"
+                  autocomplete="off"
+                />
+              </div>
+              <div>
+                <label for="cardCvv">CVV</label>
+                <input
+                  type="password"
+                  id="cardCvv"
+                  placeholder="***"
+                  maxlength="3"
+                  inputmode="numeric"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </div>
+
+          <p class="error" id="errorMsg"></p>
+
+          <button id="payBtn" class="pay-btn">Pay ₹0</button>
+
+          <p class="demo-note">
+            🔒 Demo payment only. Do not enter real card or bank details.
+          </p>
+        </section>
+
+        <!-- RIGHT: booking summary -->
+        <aside class="summary-box">
+          <h3>Booking Summary</h3>
+
+          <div class="movie-row">
+            <div class="mini-poster" id="miniPoster"></div>
+            <div>
+              <p class="movie-title" id="movieTitle"></p>
+              <p class="movie-meta" id="movieMeta"></p>
+            </div>
+          </div>
+
+          <div class="detail">
+            <span>Theatre</span><strong id="showTheatre"></strong>
+          </div>
+          <div class="detail">
+            <span>Date</span><strong id="showDate"></strong>
+          </div>
+          <div class="detail">
+            <span>Time</span><strong id="showTime"></strong>
+          </div>
+          <div class="detail">
+            <span>Seats</span><strong id="showSeats"></strong>
+          </div>
+
+          <hr />
+
+          <div class="detail">
+            <span>Tickets</span><strong id="ticketAmount"></strong>
+          </div>
+          <div class="detail">
+            <span>Convenience fee</span><strong id="feeAmount"></strong>
+          </div>
+          <div class="detail total">
+            <span>Total</span><strong id="grandTotal"></strong>
+          </div>
+
+          <p class="timer">
+            Complete payment in <strong id="timer">05:00</strong>
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Success popup -->
+    <div class="overlay" id="overlay">
+      <div class="popup">
+        <div class="popup-icon" id="popupIcon">⏳</div>
+        <h3 id="popupTitle">Processing payment...</h3>
+        <p id="popupText">Please do not close this page.</p>
+
+        <div class="popup-details" id="popupDetails"></div>
+
+        <button id="doneBtn" class="pay-btn" style="display: none">
+          Back to Movies
+        </button>
+      </div>
+    </div>
+
+    <script src="payment.js"></script>
+  </body>
+</html>
